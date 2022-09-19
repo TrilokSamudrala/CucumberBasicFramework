@@ -1,65 +1,16 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/Features/Second.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/Features/DataTableWithMaps.feature");
 formatter.feature({
-  "name": "sample login1",
+  "name": "sample login with Cucumber data table with maps",
   "description": "",
   "keyword": "Feature"
 });
-formatter.scenarioOutline({
-  "name": "sampl login to app1",
-  "description": "",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "name": "@second"
-    }
-  ]
-});
-formatter.step({
-  "name": "login to freecrm app",
-  "keyword": "Given "
-});
-formatter.step({
-  "name": "verify freecrm homepage",
-  "keyword": "Then "
-});
-formatter.step({
-  "name": "click on login button",
-  "keyword": "Then "
-});
-formatter.step({
-  "name": "enter \u003cusername\u003e and \u003cpassword\u003e and click on freecrm signin button",
-  "keyword": "Then "
-});
-formatter.step({
-  "name": "close browser",
-  "keyword": "Then "
-});
-formatter.examples({
-  "name": "",
-  "description": "",
-  "keyword": "Examples",
-  "rows": [
-    {
-      "cells": [
-        "username",
-        "password"
-      ]
-    },
-    {
-      "cells": [
-        "trilok.samudrala@gmail.com",
-        "2904@Crm"
-      ]
-    }
-  ]
-});
 formatter.scenario({
-  "name": "sampl login to app1",
+  "name": "sampl login to app with Cucumber data table with maps",
   "description": "",
-  "keyword": "Scenario Outline",
+  "keyword": "Scenario",
   "tags": [
     {
-      "name": "@second"
+      "name": "@fourth"
     }
   ]
 });
@@ -94,14 +45,19 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "enter trilok.samudrala@gmail.com and 2904@Crm and click on freecrm signin button",
+  "name": "enter username and password using datatable maps",
+  "rows": [
+    {},
+    {}
+  ],
   "keyword": "Then "
 });
 formatter.match({
-  "location": "com.sampl.steps.Steps.enter_username_and_password_and_click_on_freecrm_signin(java.lang.String,java.lang.String)"
+  "location": "com.sampl.steps.Steps.enter_username_and_password_using_datatable_maps(io.cucumber.datatable.DataTable)"
 });
 formatter.result({
-  "status": "passed"
+  "error_message": "java.lang.ClassCastException: class java.util.Collections$UnmodifiableRandomAccessList cannot be cast to class java.util.Map (java.util.Collections$UnmodifiableRandomAccessList and java.util.Map are in module java.base of loader \u0027bootstrap\u0027)\r\n\tat com.sampl.steps.Steps.enter_username_and_password_using_datatable_maps(Steps.java:91)\r\n\tat ✽.enter username and password using datatable maps(file:///C:/Users/tsamudra/git/CucumberBasicFramework/BasicCucumberFramework/src/test/resources/Features/DataTableWithMaps.feature:9)\r\n",
+  "status": "failed"
 });
 formatter.step({
   "name": "close browser",
@@ -111,6 +67,6 @@ formatter.match({
   "location": "com.sampl.steps.Steps.close_browser()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 });

@@ -12,7 +12,7 @@ import io.cucumber.junit.CucumberOptions;
 		glue={"com.sampl.steps"},
 		monochrome =true,
 		plugin = {"pretty", "html:test-output"},
-		tags= {"@second"}
+		tags= {"@fourth"}
 
 )
 
